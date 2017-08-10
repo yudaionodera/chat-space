@@ -48,8 +48,8 @@ Things you may want to cover:
 ## userテーブル
 |Column|Type|Options|
 |-----|-----|-----|
-|name|text|null: false, unique: true|
-|e-mail|text|null: false,unique: true|
+|name|String|null: false, unique: true|
+|e-mail|String|null: false,unique: true|
 |grouo_id|integer|foreign_key: true|
 
 ### Association
