@@ -8,25 +8,50 @@ header{
   }
 }
 
-
-content{
-  slidebar{
+.contents{
+  .slidebar{
     width:300px;
     height:40px;
-    slidebar__top__content{
-      back-ground: #253141;
+    float:left;
+    border: 0px,20px;
+    &__top__content{
+      background-color: #253141;
       color:#FFFFFF;
       font-size: 16px;
     }
-    slidebar__middle__content{
-      background-color: #253141;
-    }
-    slidebar__bottom__content{
+    &__middle__content{
       background-color: #2f3e51;
+      p.p1{
+        font-size:15px;
+        border-top:20px;
+        border-bottom:5px;
+        color:#FFFFFF;
+      }
+      p.p2{
+        font-size:11px;
+        border-bottom:40px;
+        color:#FFFFFF;
+      }
+    }
+    &__bottom__content{
+      background-color: #2f3e51;
+      height: 100vh;
     }
   }
-  main__contents{
-
+  .main__contents{
+    float:left;
+    &__top{
+      p.p3{
+        padding-top:35px;
+        font-size:20px;
+        color:#333333;
+      }
+    }
+    &__second{
+    }
+    &__third{
+    }
+    &__bottom{
+    }
   }
-
 }
