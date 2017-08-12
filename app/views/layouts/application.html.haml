@@ -15,7 +15,9 @@
       //しだりのバー
       .slidebar
         .slidebar__top__content
-          seoseoseoseoseseoseoesoseseo
+          seoseoseoseoses
+          = fa_icon("edit")
+          = fa_icon("cog")
         .slidebar__middle__content
           %p.p1 サンプル
           %p.p2 よろしくおねがいします.
@@ -24,15 +26,24 @@
           %p.p1 サンプル
           %p.p2 よろしくおねがいします.
         .slidebar__bottom__content
-          bottom
       .main__contents
         .main__contents__top
+          .main__contents__top__edit
+            edit
           %p.p3 Sampleグループ
-          %p.p4 Onodera Yuudai
+          %p.p4 Members/Onodera Yuudai
         .main__contents__second
-          あ
+          %p.p5<
+            ryosuke
+          %h2.h1 
+            　2017/08/08
+          %p.p6 なるほど
         .main__contents__third
           a
         .main__contents__bottom
-
-
+        　%form{:action => "/", :method => "post"} 
+            %div 
+              %label{for="name"}
+              %input{type="text"}
+            .button
+              %button{type="submit"} SEND
