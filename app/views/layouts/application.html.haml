@@ -40,10 +40,10 @@
           %p.p6 なるほど
         .main__contents__third
           a
-        .main__contents__bottom
-        　%form{:action => "/", :method => "post"} 
-            .hoge
-              %label{:for => "name"}
-              %input{:type => "text"}
-            .button 
-              %button{type="submit"} SEND
+        .main__contents__botton
+        　%form{:action => "/",:method => "post"} 
+              .div
+               %label{:for => "name"}
+               %input{:type => "text",:placeholder => "Type a text"}
+             .button 
+               %button{:type="submit"} SEND
