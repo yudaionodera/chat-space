@@ -4,10 +4,11 @@
   //ひだりのバー
   .div
     .slidebar
-      .slidebar__top__content
-        seoseoseoseosesseoseoseo
-        = fa_icon("edit")
-        = fa_icon("cog")
+      .slidebar__top
+        .slidebar__top__content
+          seoseoseoseosesseoseoseo
+          = fa_icon("edit")
+          = fa_icon("cog")
       .slidebar__middle__content
         %p.p1 サンプル
         %p.p2 よろしくおねがいします.
@@ -17,16 +18,16 @@
         %p.p2 よろしくおねがいします.
       .slidebar__bottom__content
   .main__contents
-    .main__contents__top
+    .main__contents__top.clearfix
       .main__contents__top__edit
         %h1.s1 edit
       %p.p3 Sampleグループ
       %p.p4 Members/Onodera Yuudai
     =render partial:  "messages"
     .main__contents__third
-      
+
     .main__contents__bottom
-      %form{:action => "/",:method => "post"} 
+      %form{:action => "/",:method => "post"}
         .div
           / %label{:for => "name"}
           %input{:type => "text",:placeholder => "Type a text"}
