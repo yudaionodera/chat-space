@@ -1,0 +1,50 @@
+.slidebar{
+background-color: $Lightblue;
+width:300px;
+box-sizing: border-box;
+height:100vh;
+float:left;
+border: 0px,20px;
+margin:0;
+&__top{
+  background-color: $Darkblue;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: bold;
+  height: 75.44px;
+  width: 300px;
+  height: 15%;
+  &__content{
+    height: 50px;
+    width:100%;
+    line-height: 50px;
+    text-align: center;
+    margin-bottom: -25px;
+    top:0;
+    bottom:0;
+    // margint-top:
+  }
+}
+&__middle__content{
+  margin-top:0;
+  padding-top: 0;
+  margin:0;
+  background-color: $Lightblue;
+  p.p1{
+    font-size:15px;
+    margin-top:20px;
+    margin-bottom:5px;
+    color:$white;
+  }
+  p.p2{
+    font-size:11px;
+    margin-bottom:40px;
+    color:$white;
+  }
+}
+&__bottom__content{
+  background-color: $Lightblue;
+  margin-top: 0;
+  height: 100vh;
+}
+}

@@ -35,7 +35,6 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'haml-rails'
-
 gem 'font-awesome-rails'
 
 group :development, :test do
