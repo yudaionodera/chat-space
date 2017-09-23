@@ -1,0 +1,114 @@
+.main__contents{
+  float:right;
+  width:calc(100vw - 300px);
+  padding-bottom:100px;
+  &__header{
+    background-color: $white;
+    border: 1px solid $red;
+    &__edit{
+      float:right;
+      color:$swich-color;
+      border-style: solid;
+      border-width: thin;
+      border-color: $swich-color;
+      height:20px;
+      text-align: center;
+      padding: 12.5px 20px;
+      margin: 20px 20px 0;
+      border: 1px solid;
+      h1.s1{
+        margin: auto;
+        text-align: center;
+        color: black;
+      }
+    }
+    &__top-group{
+      margin: 0 40px;
+      p.p3{
+        margin-top:35px;
+        font-size:20px;
+        color:black;
+        margin-bottom: 15px;
+      }
+    }
+  }
+  &__header__top-member{
+    margin: 0 40px;
+    color: gry;
+    font-size: 10px;
+    i.i4{
+      font-size: 5px;
+      color: gry;
+    }
+  }
+  &__second{
+    border: $red;
+    background-color: $white;
+    height: 915px;
+    overflow-y: scroll;
+    padding-left: 100px;
+    margin-top: 20px;
+    p.p5{
+      display: inline-block;
+      font-size: 16px;
+      color: $black;
+      margin-right: 10px;
+    }
+    h2.h1{
+      display: inline-block;
+      font-size: 12px;
+      color: gry;
+    }
+    p.p6{
+      font-size: 14px;
+      padding-bottom: 40px;
+
+    }
+  }
+  &__third{
+  }
+  &__footer{
+    width: 100%;
+    margin-top:20px;
+    position: fixed;
+    bottom:0;
+    height: 90px;
+    background-color: $gry;
+    &__form{
+      margin: 20px 40px;
+      position: relative;
+      .main__contents__footer-body{
+        position: relative;
+        border:none;
+        form{
+          width:calc(100vw - 300px);
+          bottom:20px;
+      }
+      input{
+              height: 50px;
+              font-size: 16px;
+              width: 1400px;
+              border: none;
+            }
+      i.fa{
+        right:30px;
+        position:relative;
+
+      }
+      }
+      input.submit{
+        background-color: $swich-color;
+        margin-right:40px;
+        margin-left:25px;
+        width:100px;
+        height:50px;
+        text-align: center;
+        color: $white;
+        position: relative;
+        right: -1400px;
+        top:-50px;
+        border:none;
+        }
+    }
+  }
+}
