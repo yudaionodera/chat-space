@@ -1,0 +1,27 @@
+// .flash {
+//   color: $white;
+//   text-align: center;
+//   &__alert{
+//     background-color: red;
+//   }
+//   &__notice {
+//     background-color: blue;
+//   }
+// }
+
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+.header {
+  height: 30px;
+  background-color: $Lightblue;
+  text-align: center;
+  &__txt {
+    color: $white;
+  }
+}
+.header.alert {
+  background-color: red;
+}
