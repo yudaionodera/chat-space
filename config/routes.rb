@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  resources :groups, only: [:show, :new, :edit, :update]
   # ログアウト
 devise_scope :social_account do
   get 'sign_out', to: "sessions#destroy"
