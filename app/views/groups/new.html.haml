@@ -1,36 +1,26 @@
 .chat-group-form
   %h1 新規チャットグループ
+  -# = form_for @group,:url => {:action => :create} do |f|
   = form_for @group do |f|
-    .chat-group-form__errors
-      %h2 1件のエラーが発生しました。
-      %ul
-        %li エラーです
-    .chat-group-form__field clearfix
+    .chat-group-form__field.clearfix
       .chat-group-form__field--left
-        = f.label :chat-group-form__label, "グループ名"
+        = f.label :name,"グループ名", class: "chat-group-form__label"
       .chat-group-form__field--right
-        = f.text_field :chat_group_name
-    .chat-group-form__field clearfix
-      <!-- この部分はインクリメンタルサーチ（ユーザー追加の非同期化のときに使用します  -->
-      <!-- .chat-group-form__field--left
-        = f.label :chat-group-form__label, "チャットメンバーを追加"
-      .chat-group-form__field--right
-        .chat-group-form__search clearfix
-          = f.text_field :user-search-field
-       #user-search-result
-      -->
-    .chat-group-form__field clearfix
+        = f.text_field :name, class: "chat_group_name"
+    .chat-group-form__field.clearfix
       .chat-group-form__field--left
-        = f.label :chat-group-form, "チャットメンバー"
+        = f.label :name,"チャットメンバーを追加", class: "chat-group-form__label"
       .chat-group-form__field--right
-        <!-- グループ作成機能の追加時はここにcollection_check_boxesの記述を入れてください  -->
-        <!-- この部分はインクリメンタルサーチ（ユーザー追加の非同期化のときに使用します  -->
-        <!-- #chat-group-users
-          .chat-group-user clearfix' id='chat-group-user-22
-            %input{name='chat_group[user_ids][]' type='hidden' value='22'}
-            %p{class='chat-group-user__name'>seo_kyohei}
-         -->
-    .chat-group-form__field clearfix
-      .chat-group-form__field--left
+        = f.collection_check_boxes(:user_ids, User.all, :id, :name) do |b|
+          = b.label { b.check_box + b.text }
+    -# .chat-group-form__field.clearfix
+    -#   .chat-group-form__field--left
+    -#     = f.label :name,"チャットメンバー", class: "chat-group-form__label"
+    -#   .chat-group-form__field--right
+        %input{type: "hidden", name: "group[user_ids][]", value: "#{current_user.id}"}
+    .chat-group-form__field.clearfix
       .chat-group-form__field--right
-        = f.submit "Save"
+        = f.submit :name, value: "登録する", class: "chat-group-form__action-btn"
+
+  -# .chat-group-user.clearfix{id: "#{current_user.id}"}
+  -# %input {name: "group[user_ids][]" ,type: "hidden", value: "#{current_user.id}"}
