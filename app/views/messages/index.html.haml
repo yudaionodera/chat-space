@@ -1,21 +1,19 @@
 %header
-  %p チャットグループが作成されました。
 .contents
   //ひだりのバー
   .div
     .slidebar
       .slidebar__top
         .slidebar__top__content
-        seoseoseoseosesseoseoseo
+          %p.name
+            = current_user.name
         = fa_icon("edit")
         = fa_icon("cog")
       .slidebar__middle__content
-        %p.p1 サンプル
-        %p.p2 よろしくおねがいします.
-        %p.p1 サンプル
-        %p.p2 よろしくおねがいします.
-        %p.p1 サンプル
-        %p.p2 よろしくおねがいします.
+      //サイドバーグループメンバー表示
+      - @group.each do |user_group|
+        %p.chat-group__name
+          = user_groups.users.name
       .slidebar__bottom__content
   .main__contents
     .main__contents__header
@@ -28,7 +26,6 @@
       %i.i4 Onodera Yuudai
     =render partial:  "messages"
     .main__contents__third
-
     .main__contents__footer
       .main__contents__footer__form
         .main__contents__footer-body
