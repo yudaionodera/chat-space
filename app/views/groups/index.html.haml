@@ -10,10 +10,9 @@
         = fa_icon("edit")
         = fa_icon("cog")
       .slidebar__middle__content
-      = @groups.each do |user_group|
-        %p.chat-group__name
-          = user_group.user.name
-          %p.p3 まだメッセージはありません
+        - if @groups.present?
+          -# = render {:partial => "groups/group",:collection => @groups}
+          = render "group", local:{groups: @groups}
       .slidebar__bottom__content
   .main__contents
     .main__contents__header
