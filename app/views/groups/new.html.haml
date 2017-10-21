@@ -13,14 +13,8 @@
       .chat-group-form__field--right
         = f.collection_check_boxes(:user_ids, User.all, :id, :name) do |b|
           = b.label { b.check_box + b.text }
-    -# .chat-group-form__field.clearfix
-    -#   .chat-group-form__field--left
-    -#     = f.label :name,"チャットメンバー", class: "chat-group-form__label"
-    -#   .chat-group-form__field--right
-        %input{type: "hidden", name: "group[user_ids][]", value: "#{current_user.id}"}
     .chat-group-form__field.clearfix
       .chat-group-form__field--right
         = f.submit :name, value: "登録する", class: "chat-group-form__action-btn"
-
   -# .chat-group-user.clearfix{id: "#{current_user.id}"}
   -# %input {name: "group[user_ids][]" ,type: "hidden", value: "#{current_user.id}"}

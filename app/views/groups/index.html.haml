@@ -10,10 +10,10 @@
         = fa_icon("edit")
         = fa_icon("cog")
       .slidebar__middle__content
-      //サイドバーグループメンバー表示
-      - @group.each do |user_group|
+      = @groups.each do |user_group|
         %p.chat-group__name
-          = user_groups.users.name
+          = user_group.user.name
+          %p.p3 まだメッセージはありません
       .slidebar__bottom__content
   .main__contents
     .main__contents__header
@@ -25,7 +25,6 @@
       MEMBER
       %i.i4 Onodera Yuudai
     = render 'messages/messages'
-    -# =render partial:  "messages/messages"
     .main__contents__third
     .main__contents__footer
       .main__contents__footer__form
