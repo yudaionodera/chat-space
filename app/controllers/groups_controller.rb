@@ -13,7 +13,16 @@ class GroupsController < ApplicationController
   end
 
   def create
-    Message.create(message_params)
+    @messege = Message.new(message_params)
+    if @messege.save
+      redirect_to root_path, notice: "メッセージを保存しました"
+      #メッセージ保存成功
+    else
+      # メッセージ失敗
+      flash.now[:alert] = "メッセージ保存に失敗しました"
+      render :index
+    end
+
     @group = current_user.groups.new(group_params)
     if @group.save
       redirect_to root_path, notice: "グループを作成しました"
@@ -43,8 +52,8 @@ class GroupsController < ApplicationController
     params.require(:user).permit(:id,:name)
   end
 
-  def message_new
-    params.require(:message),permit(:body,:image)
+  def message_params
+    params.require(:message),permit(:body,:image).merge(user_id: ,current_user.id)
   end
 
 end
