@@ -1,6 +1,7 @@
 class GroupsController < ApplicationController
   def index
     @groups = current_user.groups
+    @message = Message.new
   end
 
   def show
@@ -12,6 +13,7 @@ class GroupsController < ApplicationController
   end
 
   def create
+    Message.create(message_params)
     @group = current_user.groups.new(group_params)
     if @group.save
       redirect_to root_path, notice: "グループを作成しました"
@@ -39,6 +41,10 @@ class GroupsController < ApplicationController
 
   def update_params
     params.require(:user).permit(:id,:name)
+  end
+
+  def message_new
+    params.require(:message),permit(:body,:image)
   end
 
 end
