@@ -1,21 +1,7 @@
-.main__contents__second
+- @messages.each do |message|
   %p.p5<
-    ryosuke
+    = message.user_id
   %h2.h1
-    2017/08/08
-  %p.p6 なるほど
-  %p.p5<
-    ryosuke
-  %h2.h1
-    2017/08/08
-  %p.p6 なるほど
-  %p.p5<
-    ryosuke
-  %h2.h1
-    2017/08/08
-  %p.p6 アイス食べた
-  %p.p5<
-    ryosuke
-  %h2.h1
-    2017/08/08
-  %p.p6 お腹すいた
+    = message.created_at
+  %p.p6
+    = message.body

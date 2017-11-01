@@ -2,6 +2,7 @@ class GroupsController < ApplicationController
   def index
     @groups = current_user.groups
     @message = Message.new
+    @messages = Message.all
   end
 
   def show
@@ -13,22 +14,12 @@ class GroupsController < ApplicationController
   end
 
   def create
-    @messege = Message.new(message_params)
-    if @messege.save
-      redirect_to root_path, notice: "メッセージを保存しました"
-      #メッセージ保存成功
-    else
-      # メッセージ失敗
-      flash.now[:alert] = "メッセージ保存に失敗しました"
-      render :index
-    end
-
     @group = current_user.groups.new(group_params)
     if @group.save
       redirect_to root_path, notice: "グループを作成しました"
     else
       flash.now[:alert] = "グループ作成に失敗しました"
-      render :new
+      render :inde
     end
   end
 
@@ -51,9 +42,4 @@ class GroupsController < ApplicationController
   def update_params
     params.require(:user).permit(:id,:name)
   end
-
-  def message_params
-    params.require(:message),permit(:body,:image).merge(user_id: ,current_user.id)
-  end
-
 end

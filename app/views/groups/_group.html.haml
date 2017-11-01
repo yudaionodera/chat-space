@@ -1,4 +1,5 @@
 - @groups.each do |user_group|
   %p.chat-group__name
     = user_group.name
-    %p.p3 まだメッセージはありません
+    %p.p3
+      = user_group.messages.last.text

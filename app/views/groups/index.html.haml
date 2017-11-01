@@ -25,13 +25,14 @@
       .main__contents__header__top-member
         MEMBER
         %i.i4 Onodera Yuudai
+    .main__contents__second
     = render 'messages/messages'
     .main__contents__third
     .main__contents__footer
       .main__contents__footer__form
         .main__contents__footer-body
-          = form_for @message,url: {action: 'create'} do |f|
-            = f.text_field :body,class: "form__message"
-            %i.fa
-              = fa_icon("file-picture-o")
-            = f.submit :name, value: "SEND", class: "form__submit"
+          -# = form_for @message,url: group_message_index_path(id: @groups.ids) do |f|
+          -#   = f.text_field :body,class: "form__message"
+          -#   %i.fa
+          -#     = fa_icon("file-picture-o")
+          -#   = f.submit :name, value: "SEND", class: "form__submit"
