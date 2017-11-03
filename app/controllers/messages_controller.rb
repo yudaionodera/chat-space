@@ -1,14 +1,19 @@
 class MessagesController < ApplicationController
 	def index
-			@group = current_user.groups
+			@groups = current_user.groups
+			@group = Group.find(params[:group_id])
+			@messages = @group.messages
+			@message = Message.new
+
 	end
 
 	def new
+		@message = Message.new
 	end
 
 	def create
-		@messege = Message.new(message_params)
-		if @messege.save
+		@message = current_user.messages.new(message_params)
+		if @message.save
 			redirect_to root_path, notice: "メッセージを保存しました"
 			#メッセージ保存成功
 		else
@@ -16,7 +21,6 @@ class MessagesController < ApplicationController
 			flash.now[:alert] = "メッセージ保存に失敗しました"
 			render :index
 		end
-		binding.pry
 	end
 
 	def edit
@@ -27,7 +31,7 @@ class MessagesController < ApplicationController
 
 	private
 	def message_params
-    params.require(:message).permit(:body,:image).merge(user_id: current_user.id)
+    params.require(:message).permit(:body,:image).merge(group_id: params[:group_id])
   end
 
 end

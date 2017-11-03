@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :groups, except: [:show, :destroy] do
-    resources :message, only: [:index, :create]
+    resources :messages, only: [:index, :create]
   end
   # ログアウト
 devise_scope :social_account do
