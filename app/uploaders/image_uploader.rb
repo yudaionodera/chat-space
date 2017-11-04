@@ -26,6 +26,8 @@ class ImageUploader < CarrierWave::Uploader::Base
     %W[jpg jpeg gif png]
   end
 
+  process resize_to_limit: [300, 200]
+
   # 変換したファイルのファイル名の規則
   def filename
     "#{Time.zone.now.strftime('%Y%m%d%H%M%S')}.jpg" if original_filename.present?
