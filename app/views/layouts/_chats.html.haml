@@ -25,4 +25,5 @@
               = f.text_field :body,class: "form__message"
               %i.fa
                 = fa_icon("file-picture-o")
+                = f.file_field :image
               = f.submit :name, value: "SEND", class: "form__submit"

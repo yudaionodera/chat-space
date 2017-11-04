@@ -1,7 +1,10 @@
 - @messages.each do |message|
   %p.p5<
-    = message.user_id
+    = message.user.name
   %h2.h1
     = message.created_at
   %p.p6
     = message.body
+  %p.p6
+    - if message.image.present?
+      = image_tag message.image
