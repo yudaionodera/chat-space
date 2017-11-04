@@ -19,7 +19,7 @@
       h1.s1{
         margin: auto;
         text-align: center;
-        color: black;
+        color: #38AEF0;
       }
     }
     &__top-group{
@@ -44,7 +44,7 @@
   &__second{
     border: $red;
     background-color: $white;
-    height: 915px;
+    height: calc(100vh - 100px - 90px);
     overflow-y: scroll;
     padding-left: 100px;
     margin-top: 20px;
@@ -66,49 +66,45 @@
 
     }
   }
-  &__third{
-  }
-  &__footer{
-    width: 100%;
-    margin-top:20px;
-    position: fixed;
-    bottom:0;
+  .main__contents__footer__form{
+    background-color: #DDDDDD;
+    box-sizing: border-box;
     height: 90px;
-    background-color: $gry;
-    &__form{
-      margin: 20px 40px;
-      position: relative;
-      .main__contents__footer-body{
-        position: relative;
-        border:none;
-        form{
-          width:calc(100vw - 300px);
-          bottom:20px;
-      }
-      .form__message{
-        height: 50px;
-        font-size: 16px;
-        width: 1100px;
-        border: none;
-      }
-      i.fa{
-        right:30px;
-        position:relative;
-      }
-      }
-      .form__submit{
-        background-color: $swich-color;
-        margin-right:50px;
-        // margin-left:25px;
-        width:100px;
-        height:50px;
-        text-align: center;
-        color: $white;
-        position: relative;
-        // right: -1100px;
-        // top:-50px;
-        border:none;
-        }
+    padding: 20px 50px 20px 40px;
+    .form__message{
+      border: none;
+      box-sizing: border-box;
+      float: left;
+      height: 50px;
+      padding: 0 10px;
+      width: calc(100% - 150px);
     }
+    .main__contents__footer-body-icon{
+      background-color: #fff;
+      float: left;
+      height: 50px;
+      padding-right: 10px;
+      label.form__mask__image{
+        font-size: 20px;
+        line-height: 50px;
+        i.fa{
+          display: inline-block;
+          font: normal normal normal 14px/1 FontAwesome;
+          font-size: inherit;
+          text-rendering: auto;
+          -webkit-font-smoothing: antialiased;
+        }
+      }
+    }
+    .form__submit{
+      background-color: #38AEF0;
+      border: none;
+      color: #fff;
+      float: right;
+      font-size: 16px;
+      height: 50px;
+      margin-left: 15px;
+      padding: 0 30px;
+      }
   }
 }
