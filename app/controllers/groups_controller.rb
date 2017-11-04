@@ -18,7 +18,7 @@ class GroupsController < ApplicationController
       redirect_to root_path, notice: "グループを作成しました"
     else
       flash.now[:alert] = "グループ作成に失敗しました"
-      render :inde
+      render :index
     end
   end
 
