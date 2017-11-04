@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :products
   devise_for :users
   resources :groups, except: [:show, :destroy] do
     resources :messages, only: [:index, :create]
