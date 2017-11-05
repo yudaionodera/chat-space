@@ -5,8 +5,8 @@ class Message < ApplicationRecord
   belongs_to :group
   belongs_to :user
 
-  validates :body, presence: true　if validates :imagey, absence: true
-  validates :imagey, presence: true　if validates :body, absence: true
+  validates :body, presence: true if validates :image, absence: true
+  validates :image, presence: true if validates :body, absence: true
 
 
   mount_uploader :image, ImageUploader
