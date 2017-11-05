@@ -1,13 +1,18 @@
 class Message < ApplicationRecord
   validates :group_id, presence: true
   validates :user_id, presence: true
+  mount_uploader :image, ImageUploader
 
   belongs_to :group
   belongs_to :user
 
-  validates :body, presence: true if validates :image, absence: true
-  validates :image, presence: true if validates :body, absence: true
+  validates :text_or_image, presence: true
 
 
-  mount_uploader :image, ImageUploader
+  private
+  def text_or_image
+    body.presence || image.presence
+  end
+
+
 end
