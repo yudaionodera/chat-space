@@ -1,0 +1,28 @@
+%header
+.contents
+  //ひだりのバー
+  .div
+    = render 'layouts/sidebar'
+  .main__contents
+    .main__contents__header
+      .main__contents__header__edit
+        %h1.s1 Edit
+      .main__contents__header__top-group
+        %p.p3
+          = @group.name if @group
+      .main__contents__header__top-member
+        MEMBER
+        %i.i4 Onodera Yuudai
+    .main__contents__second
+      - if @messages
+        = render partial: 'messages/messages', locals: {messege: @messages}
+    - if controller.controller_name == "messages"
+      .main__contents__footer__form
+        = form_for @message,url: {action: 'create'} do |f|
+          = f.text_field :body,class: "form__message"
+          .main__contents__footer-body-icon
+            = f.label :image, class:"form__mask__image" do
+              %i.fa
+                = fa_icon("file-picture-o")
+                = f.file_field :image, style: "display:none"
+          = f.submit :name, value: "SEND", class: "form__submit"

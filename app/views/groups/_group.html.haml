@@ -1,4 +1,8 @@
 - @groups.each do |user_group|
-  %p.chat-group__name
-    = user_group.name
-    %p.p3 まだメッセージはありません
+    =link_to group_messages_path(user_group.id) do
+        %li
+            %p.chat-group__name
+                = user_group.name
+            %p.p3
+                - if user_group.messages.present?
+                    = user_group.messages.last.body

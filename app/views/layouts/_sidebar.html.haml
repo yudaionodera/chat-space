@@ -1,0 +1,11 @@
+.slidebar
+  .slidebar__top
+    .slidebar__top__content
+      %h3.name
+        = current_user.name
+      %ul.fa
+        = fa_icon("edit")
+        = fa_icon("cog")
+  .slidebar__middle__content
+    - if @groups.present?
+      = render "groups/group", local:{groups: @groups}

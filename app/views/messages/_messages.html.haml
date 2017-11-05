@@ -1,21 +1,10 @@
-.main__contents__second
+- @messages.each do |message|
   %p.p5<
-    ryosuke
+    = message.user.name
   %h2.h1
-    2017/08/08
-  %p.p6 なるほど
-  %p.p5<
-    ryosuke
-  %h2.h1
-    2017/08/08
-  %p.p6 なるほど
-  %p.p5<
-    ryosuke
-  %h2.h1
-    2017/08/08
-  %p.p6 アイス食べた
-  %p.p5<
-    ryosuke
-  %h2.h1
-    2017/08/08
-  %p.p6 お腹すいた
+    = message.created_at.strftime('%Y年%m月%d日 %H:%M')
+  %p.p6
+    = message.body
+  %p.p6
+    - if message.image.present?
+      = image_tag message.image
