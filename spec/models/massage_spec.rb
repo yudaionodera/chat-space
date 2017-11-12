@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe Message do
-  descrive '#create' do
+  describe '#create' do
     #メッセージがあれば保存できる
     it "is valid with a message" do
       message = build(:message,body: "あああああ")
@@ -25,19 +25,21 @@ describe Message do
     #ボディも画像もなかれば保存できない
     it "is invalid without a body,image" do
       message = build(:message, body: "", image: "")
-      expect(user.errors[:body]).to include("can't be blank") || expect(user.errors[:image]).to include("can't be blank")
+      binding.pry
+      expect(user.errors[:body]).to include("can't be blank")
     end
+    # || expect(user.errors[:image]).to include("can't be blank")
 
     #group_idがないと保存できない
     it "is invalid without a group_id" do
       message = build(:message, group_id: "")
       expect(user.errors[:group_id]).to include("can't be blank")
-
     end
 
     #user_idがないと保存できない。
     it "is invalid without a user_id" do
       message = build(:message, uesr_id: "")
       expect(user.errors[:user_id]).to include("can't be blank")
-
     end
+  end
+end
