@@ -25,7 +25,6 @@ describe Message do
     #ボディも画像もなかれば保存できない
     it "is invalid without a body,image" do
       message = build(:message, body: "", image: "")
-      binding.pry
       expect(user.errors[:body]).to include("can't be blank")
     end
     # || expect(user.errors[:image]).to include("can't be blank")
