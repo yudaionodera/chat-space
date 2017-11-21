@@ -2,19 +2,19 @@ require 'rails_helper'
 
 describe Message do
   describe '#create' do
-    #メッセージがあれば保存できる
-    it "is valid with a message" do
-      message = build(:message,body: "あああああ")
-      user.valid?
-      expect(user).to be_valid
+    #メッセージと写真があれば保存できる
+    it "is valid with a message,image" do
+      message = build(:message)
+      # message.valid?
+      expect(message).to be_valid
     end
 
-    #画像があれば保存できること
-    it "is valid with a image" do
-      message = build(:message,image: "www")
-      user.valid?
-      expect(user).to be_valid
-    end
+    # #画像があれば保存できること
+    # it "is valid with a image" do
+    #   message = build(:message)
+    #   # message.valid?
+    #   expect(message).to be_valid
+    # end
 
     #ボディと画像があれば保存できる
     it "is valid with a body,image" do
