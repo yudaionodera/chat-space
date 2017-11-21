@@ -5,7 +5,6 @@ describe Message do
     #メッセージと写真があれば保存できる
     it "is valid with a message,image" do
       message = build(:message)
-      # message.valid?
       expect(message).to be_valid
     end
 
@@ -25,20 +24,23 @@ describe Message do
     #ボディも画像もなかれば保存できない
     it "is invalid without a body,image" do
       message = build(:message, body: "", image: "")
-      expect(user.errors[:body]).to include("can't be blank")
+      message.valid?
+      expect(message.errors[:text_or_image]).to include("を入力してください")
     end
     # || expect(user.errors[:image]).to include("can't be blank")
 
     #group_idがないと保存できない
     it "is invalid without a group_id" do
       message = build(:message, group_id: "")
-      expect(user.errors[:group_id]).to include("can't be blank")
+      message.valid?
+      expect(message.errors[:group_id]).to include("を入力してください")
     end
 
     #user_idがないと保存できない。
     it "is invalid without a user_id" do
-      message = build(:message, uesr_id: "")
-      expect(user.errors[:user_id]).to include("can't be blank")
+      message = build(:message, user_id: "")
+      message.valid?
+      expect(message.errors[:user_id]).to include("を入力してください")
     end
   end
 end
