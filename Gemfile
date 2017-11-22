@@ -50,6 +50,7 @@ group :development, :test do
   gem "devise"
   gem 'carrierwave'
   gem 'mini_magick'
+  gem 'rails-controller-testing'
 end
 
 group :development do
