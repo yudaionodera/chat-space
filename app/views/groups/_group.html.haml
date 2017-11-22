@@ -1,5 +1,5 @@
-ø- @groups.each do |user_group|
-    =link_to group_messages_path(user_group.id) do
+- @groups.each do |user_group|
+    = link_to group_messages_path(user_group.id) do
         %li
             %p.chat-group__name
                 = user_group.name
