@@ -12,5 +12,4 @@ class Message < ApplicationRecord
   def text_or_image
     body.presence || image.presence
   end
-
 end
