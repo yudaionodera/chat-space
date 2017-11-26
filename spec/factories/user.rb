@@ -1,3 +1,5 @@
+require "Faker"
+
 FactoryGirl.define do
   pass = Faker::Internet.password(8)
 

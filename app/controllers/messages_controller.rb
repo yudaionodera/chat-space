@@ -1,4 +1,6 @@
 class MessagesController < ApplicationController
+	#before_action :move_to_index, except: [:index]
+
 	def index
 			@groups = current_user.groups
 			@group = Group.find(params[:group_id])
