@@ -9,5 +9,8 @@ FactoryGirl.define do
     password                  pass
     password_confirmation     pass
     group_id                  "1"
+
+    #after(:create) do |user| #なんだこれ。
+    #create(:member, user: user, group: create(:group))
   end
 end
