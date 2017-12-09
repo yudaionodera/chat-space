@@ -5,8 +5,8 @@ describe MessagesController, type: :controller do
   let(:user){FactoryGirl.create(:user)}
   let(:group){FactoryGirl.create(:group)}
   let(:groups) {create_list(:group, 4)}
-  let(:message){FactoryGirl.create(:message)}
-  let(:messages){create_list(:message, 3)}
+  let(:message){FactoryGirl.create(:message, user_id: user.id, group_id: group.id)}
+  let(:messages){create_list(:message, 3, user_id: user, group_id: group)}
   before do
     sign_in user
   end
@@ -21,13 +21,13 @@ describe MessagesController, type: :controller do
           get :index, group_id: group
         end
         it "assigns the requested message to @groups" do
-          expect(assigns(:groups)).to match(groups)
+          expect(assigns(:groups)).to eq groups
         end
         it "assigns the requested message to @group" do
           expect(assigns(:group)).to eq group
         end
         it "assigns the requested message to @messages" do
-          expect(assigns(:messages)).to match(messages)
+          expect(assigns(:messages)).to eq messages
         end
 
         it "assigns the requested @message" do
@@ -51,7 +51,7 @@ describe MessagesController, type: :controller do
   end
 
   describe 'POST #create' do
-    context 'uesr is logind and succsessed save the message' do
+    context 'user is logind and succsessed save the message' do
       before do
         login_user user
         get :index, group_id: group
@@ -60,7 +60,7 @@ describe MessagesController, type: :controller do
         #expect(assigns(:message)).to eq message
         expect(assigns(:message)).to be_a_new(Message)
       end
-    context  'uesr is logind and faild save the message' do
+    context  'user is logind and faild save the message' do
       #メッセージの保存は行われなかったか
       it "renders the :index template" do
       message = build(:message, body: "", image: "")

@@ -8,8 +8,7 @@ FactoryGirl.define do
     email                     Faker::Internet.email
     password                  pass
     password_confirmation     pass
-    group_id                  "1"
-
+    #group
     #after(:create) do |user| #なんだこれ。
     #create(:member, user: user, group: create(:group))
   end

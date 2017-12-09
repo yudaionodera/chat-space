@@ -1,10 +1,10 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
+ENV['RAILS_ENV'] ||= 'test'
 require 'spec_helper'
 require 'rspec/rails'
 require 'devise'
 require File.expand_path("spec/support/controller_macros.rb")
 require File.expand_path('../../config/environment', __FILE__)
-ENV['RAILS_ENV'] ||= 'test'
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 # Add additional requires below this line. Rails is not loaded until this point!
@@ -21,7 +21,7 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 # of increasing the boot-up time by auto-requiring all files in the support
 # directory. Alternatively, in the individual `*_spec.rb` files, manually
 # require only the support files necessary.
-#
+#ActiveRecord::Migration.maintain_test_schema!11
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
 # Checks for pending migrations and applies them before tests are run.

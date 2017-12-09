@@ -1,5 +1,6 @@
 class MessagesController < ApplicationController
 	#before_action :move_to_index, except: [:index]
+	before_action :authenticate_user!
 
 	def index
 			@groups = current_user.groups
