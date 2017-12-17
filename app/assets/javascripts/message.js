@@ -17,7 +17,9 @@ $(function(){
     e.preventDefault();
     var formData = new FormData(this); //formのデータの送信に使うことができる。(FormData
   //  var url = $(this).attr(`action`) //attrは要素がもつ指定属性を返す。ここでは、urlを返している。
+  //  var group_id = $('.group_id').attr('value');
     var href = window.location.href + '/messages'
+    //var href = '/groups/' + group_id + '/messages.json'
     $.ajax({
       url: href,
       type: "POST",
@@ -28,8 +30,8 @@ $(function(){
     })
     .done(function(data){
       var html = buildHTML(data);
-      $('.messages').append(html) //apendメソッド　$(‘セレクタ’).append(‘追加するもの’);　→アクションが起きたら、htmlメソッドが追加される仕組み。
-      $('.textbox').val('') //どこからこのテキストボックスは来ているのか。
+      $('.messages').append(html); //apendメソッド　$(‘セレクタ’).append(‘追加するもの’);　→アクションが起きたら、htmlメソッドが追加される仕組み。
+      $('.form__message').val(''); //どこからこのテキストボックスは来ているのか。
       $('.main__contents__second').animate({
          'marginTop': '200px'
       });
