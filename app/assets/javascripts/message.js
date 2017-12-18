@@ -9,8 +9,7 @@ $(function(){
                   %p.p6
                     = message.body
                   %p.p6
-                    - if message.image.present?
-                      = image_tag message.image`
+                    = image_tag message.image if message.image.present?`
     return html;
   }
   $( '#new_message').on('submit', function(e){
