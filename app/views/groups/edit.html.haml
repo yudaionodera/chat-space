@@ -1,10 +1,6 @@
 .chat-group-form
   #h1 チャットグループ編集
   = form_for @group do |f|
-    -# .chat-group-form__errors
-    -#   %h2 1件のエラーが発生しました。
-    -#   %ul
-    -#     %li エラーです
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
         = f.label :group_name, "グループ名"
@@ -14,15 +10,18 @@
       .chat-group-form__field--left
         = f.label :group_name, "チャットメンバーを追加"
       .chat-group-form__field--right
-        = f.collection_check_boxes(:user_ids, User.all, :id, :name) do |b|
-          = b.label { b.check_box + b.text }
-    -#     = f.text_field :name, class: "group_name", placeholder: "追加したいメンバー名を入力してください",type:  "text"
-    -# .chat-group-form__field.clearfix
-    -#   .chat-group-form__field--left
-    -#     -# = f.label :chat-group-form__label, "チャットメンバー" %label{class="chat-group-form__label" for="chat_group_チャットメンバー">チャットメンバー}
-    -#     = f.label :name,"チャットメンバー", class: "chat-group-form__label"
+        -# = f.collection_check_boxes(:user_ids, User.all, :id, :name) do |b|
+        -#  = b.label { b.check_box + b.text }
+        = f.text_field :name, class: "group_name", placeholder: "追加したいメンバー名を入力してください",type:  "text"
+    .chat-group-form__field.clearfix
+      .chat-group-form__field--left
+        = f.label :group_name, "チャットメンバー"
+      .chat-group-form__field--right
+        - @group.users.each do |user|
+          %p.chat-group-user__name
+            = user.name
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
       .chat-group-form__field--right
         -# <!-- グループ作成機能の追加時はここにcollection_check_boxesの記述を入れてください  -->
-        = f.submit :name, value: "SAVE", class: "chat-group-form__action-btn"
+        = f.submit :name, value: "更新する", class: "chat-group-form__action-btn"
