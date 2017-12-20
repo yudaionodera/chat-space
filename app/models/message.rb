@@ -8,6 +8,7 @@ class Message < ApplicationRecord
 
   validates :text_or_image, presence: true
 
+# binding.pry
 
   private
   def text_or_image

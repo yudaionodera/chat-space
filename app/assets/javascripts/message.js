@@ -26,6 +26,11 @@ $(function(){
       dataType: 'json',
       processData: 'false',
       contentType: 'false'
+      success : function(data) {
+      //APIとの通信に成功してデーターが取得できた場合に実行される
+      alert('メッセージ送信成功');
+return;
+},
     })
     .done(function(data){
       var html = buildHTML(data);
