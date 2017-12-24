@@ -11,14 +11,8 @@
         = f.label :group_name, "チャットメンバーを追加",class: "chat-group-form__label"
       .chat-group-form__field--right
         .chat-group-form__search.clearfix
-          = f.text_field :name, class: "chat-group-form__input",id: "user-search-field", placeholder: "追加したいメンバー名を入力してください",type:  "text"
+          = f.text_field :name, class: "chat-group-form__input",id: "user-search-field",value: "", placeholder: "追加したいメンバー名を入力してください",type:  "text"
         .js-user-seaerch-result
-          -# .chat-group-user.clearfix
-          -#   - @users.each do |user|
-          -#     %p.chat-group-user__name
-          -#       = user.name
-          -#     %a.user-search-add.chat-group-user__btn.chat-group-user__btn--add.js-add-btn
-          -#       追加
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
         = f.label :group_name, "チャットメンバー",class: "chat-group-form__label"
