@@ -1,7 +1,6 @@
 p{
   color:black;
 }
-
 .chat-group-form {
   width: 980px;
   margin: 60px auto;
@@ -10,8 +9,6 @@ p{
   border: 1px solid #ddd;
   border-radius: 5px;
   box-sizing: border-box;
-
-
 
   h1 {
     letter-spacing: 2px;
@@ -72,6 +69,27 @@ p{
       line-height: 50px;
       font-weight: bold;
       text-align: right;
+    }
+    .chat-group-form__search.clearfix{
+      .chat-group-form__input{
+
+      }
+    }
+    .js-user-seaerch-result{
+      padding: 0 15px;
+      line-height: 50px;
+      font-size: 14px;
+      border-bottom: 1px solid #ddd;
+      .chat-group-user.clearfix{
+        p.chat-group-user__name{
+          float:left;
+          color: black;
+        }
+        a.user-search-add.chat-group-user__btn.chat-group-user__btn--add.js-add-btn{
+          float: right;
+          color: #38aef0;
+        }
+      }
     }
 
     .chat-group-form__input {
