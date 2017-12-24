@@ -17,7 +17,7 @@ class MessagesController < ApplicationController
 		respond_to do |format|
 			format.html{ redirect_to group_messages_path(params[:group_id]) }
 			format.json
-			#binding.pry
+			# binding.pry
 		end
 		# if @message.save
 		# 	redirect_to root_path, notice: "メッセージを保存しました"
