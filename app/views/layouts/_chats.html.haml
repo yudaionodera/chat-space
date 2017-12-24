@@ -5,8 +5,9 @@
     = render 'layouts/sidebar'
   .main__contents
     .main__contents__header
-      .main__contents__header__edit
-        %h1.s1 Edit
+      - if @group
+        .main__contents__header__edit
+          %a.right-header__button{href: "/groups/#{@group.id}/edit"} Edit
       .main__contents__header__top-group
         %p.p3
           = @group.name if @group
