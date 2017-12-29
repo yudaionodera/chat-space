@@ -18,18 +18,17 @@
         = f.label :group_name, "チャットメンバー",class: "chat-group-form__label"
       .chat-group-form__field--right
         .chat-group-users.js-add-user
-          .chat-group-user.clearfix.js-chat-member
-            - @users.each do |user|
+          - @users.each do |user|
+            .chat-group-user.clearfix.js-chat-member{id: "chat-group-user-#{user.id}"}
+              %input{name: "group[user_ids][]",type: "hidden",value: "#{user.id}"}
               %p.chat-group-user__name
                 = user.name
               %a.user-search-add.chat-group-user__btn.chat-group-user__btn--add.js-add-btn{"data-user-id": "#{user.id}","data-user-name": "#{user.name}"} 削除
-              %input{type: "hidden"}
-
-        -# - @group.users.each do |user|
-        -#   %p.chat-group-user__name
-        -#     = user.name
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
       .chat-group-form__field--right
         -# <!-- グループ作成機能の追加時はここにcollection_check_boxesの記述を入れてください  -->
         = f.submit :name, value: "更新する", class: "chat-group-form__action-btn"
+
+//追加したり消したりする動作のやり方がわからん。
+//それをjavaで実装すれば完成するわ。
