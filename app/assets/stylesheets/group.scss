@@ -80,7 +80,16 @@ p{
       line-height: 50px;
       font-size: 14px;
       border-bottom: 1px solid #ddd;
-      .chat-group-user.clearfix{
+      .chat-group-user.clearfix{ //javascrptで追加されるやつに当たってない可能性
+        padding: 0 15px;
+        line-height: 50px;
+        font-size: 14px;
+        border-bottom: 1px solid #ddd;
+        &:after {
+          content: "";
+          clear: both;
+          display: block;
+        }
         p.chat-group-user__name{
           float:left;
           color: black;
@@ -101,7 +110,7 @@ p{
     }
   }
 
-  .chat-group-user {
+  .chat-group-user.clearfix{
     padding: 0 15px;
     line-height: 50px;
     font-size: 14px;
@@ -123,11 +132,26 @@ p{
       cursor: pointer;
 
       &.chat-group-user__btn--add {
-        color: #38aef0;
+        //color: #38aef0;
+        color: #f05050;
       }
 
       &.chat-group-user__btn--remove {
         color: #f05050;
+      }
+    }
+  }
+  .chat-group-users.js-add-user{
+
+    .chat-group-user.clearfix.js-chat-member{
+      padding: 0 15px;
+      line-height: 50px;
+      font-size: 14px;
+      border-bottom: 1px solid #ddd;
+      &:after {
+        content: "";
+        clear: both;
+        display: block;
       }
     }
   }
