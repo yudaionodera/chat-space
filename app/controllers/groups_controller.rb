@@ -28,18 +28,30 @@ class GroupsController < ApplicationController
   end
 
   def update
-    @grouop =Group.find(params[:id])
+    @group =Group.find(params[:id])
     @users = @group.users
     @group.update(update_params)
+
   end
 
   def search
     @users = User.where('name LIKE(?)',"%#{params[:keyword]}%")
     respond_to do |format|
       format.html
-      format.json
+      format.json {render 'index',json: @users }#json形式のデータを受け取ったら、@usersをデータとして返す そしてindexをrenderで表示する
     end
   end
+  # 文字が入力される
+  # ↓
+  # jsで読み取る
+  # ↓
+  # コントローラーにjson形式でajax通信でデータを渡す
+  # ↓
+  # そのデータを元に、like句を使って検索
+  # ↓
+  # 検索結果をjsに返す
+  # ↓
+  # 受け取ったデータをappendで表示する
 
   private
   def group_params
