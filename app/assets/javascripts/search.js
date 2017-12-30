@@ -20,6 +20,12 @@ $(function() {
     //               %a.user-search-add.chat-group-user__btn.chat-group-user__btn--add.js-add-btn
     //                 追加`
     //現在所属しているグループの編集に使う
+
+    search_list.append(html); //htmlの要素を追加する
+    // search_result.append(html2);//
+  }
+
+  function appendUserToMember(user){
     var html2 = `<div class="chat-group-user clearfix js-chat-member",id="chat-group-user-${user.id}">
                   <input type="hidden",name = "group[user_ids][]",value = "${user.id}">
                     <p class = "chat-group-user__name">
@@ -30,8 +36,7 @@ $(function() {
                     </a>
                   </input>
                 </div>`
-    search_list.append(html); //htmlの要素を追加する
-    // search_result.append(html2);//
+    chat_members.append(html2);
   }
 
   function appendNoUser(user) {
@@ -53,7 +58,6 @@ $(function() {
       dataType: 'json'
       timeout: 500;
     })
-
     .done(function(users){//detaには@usersが入っている。
       $(".js-user-seaerch-result").empty(); //追加のボタンが該当するdiv idの要素が削除される。
       //$("#chat-group-user-${uesr.id}").append();  //
@@ -67,10 +71,12 @@ $(function() {
       }
     })
   });
+
   //⑵追加ボタンを押したら、追加されるコード
   $(document).on("click","#chat-group-user-#{user.id}",function(){
-    chat_members.append();
-    save();
+    //chat_members.append();
+    $("chat-group-user-#{user.id}").remove();//追加ボタンを押したユーザーを消す処理
+    appendUserToMember(user);
   });
   //⑶削除ボタンを押したら、削除ボタンが含まれる親要素を消す。
   $(document).on("click","#chat-group-user-#{user.id}",function(){
