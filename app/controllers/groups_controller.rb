@@ -31,7 +31,6 @@ class GroupsController < ApplicationController
     @group =Group.find(params[:id])
     @users = @group.users
     @group.update(update_params)
-
   end
 
   def search
