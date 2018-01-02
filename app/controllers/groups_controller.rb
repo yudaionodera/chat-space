@@ -35,9 +35,11 @@ class GroupsController < ApplicationController
 
   def search
     @users = User.where('name LIKE(?)',"%#{params[:keyword]}%")
+    @group = Group.find(params[:id])
     respond_to do |format|
-      format.html
-      format.json {render 'index',json: @users }#json形式のデータを受け取ったら、@usersをデータとして返す そしてindexをrenderで表示する
+      format.html {redirect_to group_messages_path[@group.id]}
+      format.json {render 'search.json.jbuilder',json: @users }#json形式のデータを受け取ったら、@usersをデータとして返す
+      #
     end
   end
 
