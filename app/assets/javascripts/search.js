@@ -7,18 +7,17 @@ $(function() {
   var savedUserId = [];
 
   function appendUser(user){
-    var html =`<div class = "chat-group-user clearfix">
-                  <p class = "chat-group-user__name" >${user.name}</p>
-                  <a class = "user-search-add chat-group-user__btn chat-group-user__btn--add js-add-btn",data-id="'+ ${user.id} +'" data-name="' + ${user.name} +'">追加</a>
+    var html =`<div class="chat-group-user clearfix">
+                  <p class="chat-group-user__name">${user.name}</p>
+                  <a class="user-search-add chat-group-user__btn chat-group-user__btn--add js-add-btn" data-id="${user.id}" data-name="${user.name}">追加</a>
               </div>`
     search_list.append(html);
   }
-
   function appendUserToMember(userId,userName){
-    var html2 = `<div class="chat-group-user clearfix js-chat-member",id="${userId}">
-                  <input type="hidden",name = "group[user_ids][]",value = "${userId}">
-                    <p class = "chat-group-user__name">${userName}</p>
-                    <a class = "user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn,data-user-id = "${userId}",data-user-name = "${userName}">削除</a>
+    var html2 = `<div class="chat-group-user clearfix js-chat-member" id="${userId}">
+                  <input type="hidden" name = "group[user_ids][]" value="${userId}">
+                    <p class="chat-group-user__name">${userName}</p>
+                    <a class="user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn" data-user-id="${userId}" data-user-name="${userName}">削除</a>
                   </input>
                 </div>`
     chat_members.append(html2);
@@ -51,16 +50,16 @@ $(function() {
  });
 
  //⑵追加ボタンを押したら、追加されるコード
- $(document).on("click",".user-search-add",function(){
-    console.log($(this));
-    var adduserId = $(this).attr('data-user-id'); //ここでとれてないっぽい
-    var adduserName = $(this).attr('data-user-name');
+ $('.js-user-seaerch-result').on("click", ".user-search-add", function() {
+   console.log(this);
+    var adduserId = $(this).attr('data-id'); //ここでとれてないっぽい
+    var adduserName = $(this).attr('data-name');
     console.log(adduserId);
 
     // MySQLレコードを更新
     $.ajax({
            type:'PUT',
-           url:'/groups/:' + adduserId,
+           url:'/groups/' + adduserId,
            data: {'': adduserName},
            success:function(data){
               console.log(data);
@@ -69,7 +68,6 @@ $(function() {
     $(this).parent().remove();
     appendUserToMember(adduserId,adduserName); // 追加ボタンを押したuserのいdとnameをぶち込む。
   });
-
  //⑶削除ボタンを押したら、削除ボタンが含まれる親要素を消す。
  $(document).on("click",".user-search-remove",function(){
    var deleteuserId = $(this).attr("data-user-id");

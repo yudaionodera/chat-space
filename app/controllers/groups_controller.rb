@@ -31,13 +31,14 @@ class GroupsController < ApplicationController
     @group =Group.find(params[:id])
     @users = @group.users
     @group.update(update_params)
+    redirect_to root_path, notice: "グループを更新しました"
   end
 
   def search
     @users = User.where('name LIKE(?)',"%#{params[:keyword]}%")
-    @group = Group.find(params[:id])
+    # @group = Group.find(params[:id])
     respond_to do |format|
-      format.html {redirect_to group_messages_path[@group.id]}
+      format.html
       format.json {render 'search.json.jbuilder',json: @users }#json形式のデータを受け取ったら、@usersをデータとして返す
       #
     end
@@ -49,6 +50,6 @@ class GroupsController < ApplicationController
   end
 
   def update_params
-    params.require(:user).permit(:id,:name)
+    params.require(:group).permit(:name,user_ids: [])
   end
 end
