@@ -57,14 +57,14 @@ $(function() {
     console.log(adduserId);
 
     // MySQLレコードを更新
-    $.ajax({
-           type:'PUT',
-           url:'/groups/' + adduserId,
-           data: {'': adduserName},
-           success:function(data){
-              console.log(data);
-           }
-    });
+    // $.ajax({
+    //        type:'PUT',
+    //        url:'/groups/ + adduserId',
+    //        data: {'': adduserName},
+    //        success:function(data){
+    //           console.log(data);
+    //        }
+    // });
     $(this).parent().remove();
     appendUserToMember(adduserId,adduserName); // 追加ボタンを押したuserのいdとnameをぶち込む。
   });
@@ -74,11 +74,11 @@ $(function() {
    var deleteuserIdd = $(this).attr("data-user-id");
    var deleteuserName = $(this).attr("data-user-name");
    //削除ボタンを押したメンバーを削除する
-   $.ajax({
-   type:'DELETE',
-   url:'/groups/:' + deleteuserId,
-   data: {},
-   })
+   // $.ajax({
+   // type:'DELETE',
+   // url:'/groups/:+ deleteuserId' ,
+   // data: {},
+   // })
    $(this).parent().remove();
  });
 });

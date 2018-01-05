@@ -12,14 +12,12 @@
         %p.p3
           = @group.name if @group
       .main__contents__header__top-member
-        MEMBER
+      %ul.left-header__members
+        MEMBER :
         - if @users
           - @users.each do |user|
             %li.member
               #{user.name}
-        - else
-        %li.member
-          #{current_user.name}
     .main__contents__second
       - if @messages
         = render partial: 'messages/messages', locals: {messege: @messages}
