@@ -4,7 +4,7 @@ class MessagesController < ApplicationController
 			@group = Group.find(params[:group_id])
 			@messages = @group.messages
 			@message = Message.new
-
+			@uesrs = @group.users
 	end
 
 	def new
