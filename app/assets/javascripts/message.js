@@ -44,3 +44,38 @@ $(function(){
     // }))
   })
 })
+
+//自動更新分
+$(function(){
+  function buildMessage(message) {
+    var html3 = `- @messages.each do |message|
+                  %p.p5<
+                    = message.user_name
+                  %h2.h1
+                    = message.created_at.strftime('%Y年%m月%d日 %H:%M')
+                  %p.p6
+                    = message.body
+                  %p.p6
+                    = image_tag message.image if message.image.present?`
+    return html3;
+  }
+  $(function(){
+    setInterval(update, 100); //5秒ごとにupdateする
+  });
+  function update(){
+    var message_id = $('.js-messages:last').data("id");
+    $.ajax({
+      url: '/groups/:group_id/messages', //URL
+      type: 'GET', //getメソッド
+      data:{  //railsに送るデータ
+        message: {id: message_id }
+      },
+      dataType: "json" //json形式
+    })
+    .always(function(data){ //index.json.jbuilderから受け取ったデータ(@new_message)を引数にとる
+      $.each(data, function(i, data){ //
+        buildMessage(data);
+      });
+    });
+  }
+});
