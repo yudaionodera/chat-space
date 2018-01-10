@@ -13,10 +13,14 @@ class MessagesController < ApplicationController
 
 	def create
 		@message = current_user.messages.new(message_params)
-		@message.save
 		respond_to do |format|
-			format.html{ redirect_to group_messages_path(params[:group_id]) }
-			format.json
+			if 	@message.save
+				format.html{ redirect_to group_messages_path(params[:group_id])}
+				format.json
+			else
+				format.html{redirect_to group_messages_path(params[:group_id])}
+				format.json
+			end
 		end
 		# if @message.save
 		# 	redirect_to root_path, notice: "メッセージを保存しました"
