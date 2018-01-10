@@ -1,3 +1,23 @@
-// Place all the styles related to the messages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.main__contents{
+
+  .main__contents__header{
+
+    .main__contents__header__edit{
+
+      a.right-header__button{
+        color: #38AEF0;
+        text-decoration: none;
+      }
+    }
+  }
+  ul.left-header__members{
+      display: flex;
+      color: #999;
+      font-size: 12px;
+      margin-top: 15px;
+      li.member{
+        display: inline-block;
+        padding-right: 5px;
+      }
+  }
+}

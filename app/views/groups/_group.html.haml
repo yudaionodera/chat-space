@@ -1,8 +1,13 @@
-ø- @groups.each do |user_group|
+- @groups.each do |user_group|
     =link_to group_messages_path(user_group.id) do
-        %li
-            %p.chat-group__name
-                = user_group.name
-            %p.p3
-                - if user_group.messages.present?
-                    = user_group.messages.last.body
+        .group__name
+            = user_group.name
+        .group__message
+            - if user_group.messages.present?
+                = user_group.messages.last.body
+        -# %li
+        -#     %p.chat-group__name
+        -#         = user_group.name
+        -#     %p.p3
+        -#         - if user_group.messages.present?
+        -#             = user_group.messages.last.body

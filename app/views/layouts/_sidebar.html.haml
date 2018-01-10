@@ -4,8 +4,10 @@
       %h3.name
         = current_user.name
       %ul.fa
-        = fa_icon("edit")
-        = fa_icon("cog")
+        %a{href: "/groups/new"}
+          = fa_icon("edit")
+        %a{href: "/users/edit"}
+          = fa_icon("cog")
   .slidebar__middle__content
     - if @groups.present?
       = render "groups/group", local:{groups: @groups}

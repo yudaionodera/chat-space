@@ -1,7 +1,30 @@
-p{
-  color:white;
+i.fa{
+  // color:#fff;
+  font-size:16px;
 }
 
+h3.name{
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.group__name{
+  color: #fff;
+  font-size: 15px;
+  margin-top: 20px;
+}
+
+.group__message{
+  color: #fff;
+  font-size: 11px;
+  margin-top: 5px;
+}
+
+p{
+  color:black;
+}
 .chat-group-form {
   width: 980px;
   margin: 60px auto;
@@ -10,8 +33,6 @@ p{
   border: 1px solid #ddd;
   border-radius: 5px;
   box-sizing: border-box;
-
-
 
   h1 {
     letter-spacing: 2px;
@@ -73,6 +94,36 @@ p{
       font-weight: bold;
       text-align: right;
     }
+    .chat-group-form__search.clearfix{
+      .chat-group-form__input{
+
+      }
+    }
+    .js-user-seaerch-result{
+      padding: 0 15px;
+      line-height: 50px;
+      font-size: 14px;
+      border-bottom: 1px solid #ddd;
+      .chat-group-user.clearfix{ //javascrptで追加されるやつに当たってない可能性
+        padding: 0 15px;
+        line-height: 50px;
+        font-size: 14px;
+        border-bottom: 1px solid #ddd;
+        &:after {
+          content: "";
+          clear: both;
+          display: block;
+        }
+        p.chat-group-user__name{
+          float:left;
+          color: black;
+        }
+        a.user-search-add.chat-group-user__btn.chat-group-user__btn--add.js-add-btn{
+          float: right;
+          color: #38aef0;
+        }
+      }
+    }
 
     .chat-group-form__input {
       float: left;
@@ -83,7 +134,7 @@ p{
     }
   }
 
-  .chat-group-user {
+  .chat-group-user.clearfix{
     padding: 0 15px;
     line-height: 50px;
     font-size: 14px;
@@ -96,6 +147,7 @@ p{
 
     .chat-group-user__name {
       float: left;
+      color:black;
     }
 
     .chat-group-user__btn {
@@ -104,11 +156,26 @@ p{
       cursor: pointer;
 
       &.chat-group-user__btn--add {
-        color: #38aef0;
+        //color: #38aef0;
+        color: #f05050;
       }
 
       &.chat-group-user__btn--remove {
         color: #f05050;
+      }
+    }
+  }
+  .chat-group-users.js-add-user{
+
+    .chat-group-user.clearfix.js-chat-member{
+      padding: 0 15px;
+      line-height: 50px;
+      font-size: 14px;
+      border-bottom: 1px solid #ddd;
+      &:after {
+        content: "";
+        clear: both;
+        display: block;
       }
     }
   }

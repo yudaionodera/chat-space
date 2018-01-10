@@ -28,9 +28,23 @@ class GroupsController < ApplicationController
   end
 
   def update
-    @grouop =Group.find(params[:id])
+    @group =Group.find(params[:id])
     @users = @group.users
-    @group.update(update_params)
+    if @group.update(update_params)
+      redirect_to root_path, notice: "グループを更新しました"
+    else
+      redirect_to edit_group_path(@group.id),notice: "グループを更新に失敗しました"
+    end
+  end
+
+  def search
+    @users = User.where('name LIKE(?)',"%#{params[:keyword]}%")
+    # @group = Group.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.json {render 'search.json.jbuilder',json: @users }#json形式のデータを受け取ったら、@usersをデータとして返す
+      #
+    end
   end
 
   private
@@ -39,6 +53,6 @@ class GroupsController < ApplicationController
   end
 
   def update_params
-    params.require(:user).permit(:id,:name)
+    params.require(:group).permit(user_ids: [])
   end
 end

@@ -1,0 +1,58 @@
+MessagesController	/Users/onoderayuudai/projects/chat-space/app/controllers/messages_controller.rb	/^class MessagesController < ApplicationController$/;"	class	line:1
+index	/Users/onoderayuudai/projects/chat-space/app/controllers/messages_controller.rb	/^	def index$/;"	method	line:2	class:MessagesController
+new	/Users/onoderayuudai/projects/chat-space/app/controllers/messages_controller.rb	/^	def new$/;"	method	line:10	class:MessagesController
+create	/Users/onoderayuudai/projects/chat-space/app/controllers/messages_controller.rb	/^	def create$/;"	method	line:14	class:MessagesController
+edit	/Users/onoderayuudai/projects/chat-space/app/controllers/messages_controller.rb	/^	def edit$/;"	method	line:31	class:MessagesController
+update	/Users/onoderayuudai/projects/chat-space/app/controllers/messages_controller.rb	/^	def update$/;"	method	line:34	class:MessagesController
+message_params	/Users/onoderayuudai/projects/chat-space/app/controllers/messages_controller.rb	/^	def message_params$/;"	method	line:38	class:MessagesController
+h3.name	/Users/onoderayuudai/projects/chat-space/app/assets/stylesheets/group.scss	/^h3.name{$/;"	function	line:1
+.group__name	/Users/onoderayuudai/projects/chat-space/app/assets/stylesheets/group.scss	/^.group__name{$/;"	function	line:8
+.group__message	/Users/onoderayuudai/projects/chat-space/app/assets/stylesheets/group.scss	/^.group__message{$/;"	function	line:14
+p	/Users/onoderayuudai/projects/chat-space/app/assets/stylesheets/group.scss	/^p{$/;"	function	line:20
+.chat-group-form	/Users/onoderayuudai/projects/chat-space/app/assets/stylesheets/group.scss	/^.chat-group-form {$/;"	function	line:23
+h1	/Users/onoderayuudai/projects/chat-space/app/assets/stylesheets/group.scss	/^  h1 {$/;"	function	line:32
+.chat-group-form__errors	/Users/onoderayuudai/projects/chat-space/app/assets/stylesheets/group.scss	/^  .chat-group-form__errors {$/;"	function	line:39
+h2	/Users/onoderayuudai/projects/chat-space/app/assets/stylesheets/group.scss	/^    h2 {$/;"	function	line:46
+ul	/Users/onoderayuudai/projects/chat-space/app/assets/stylesheets/group.scss	/^    ul {$/;"	function	line:52
+li	/Users/onoderayuudai/projects/chat-space/app/assets/stylesheets/group.scss	/^    li {$/;"	function	line:58
+.chat-group-form__field	/Users/onoderayuudai/projects/chat-space/app/assets/stylesheets/group.scss	/^  .chat-group-form__field {$/;"	function	line:65
+&:after	/Users/onoderayuudai/projects/chat-space/app/assets/stylesheets/group.scss	/^    &:after {$/;"	function	line:67
+.chat-group-form__field--left	/Users/onoderayuudai/projects/chat-space/app/assets/stylesheets/group.scss	/^    .chat-group-form__field--left {$/;"	function	line:73
+.chat-group-form__field--right	/Users/onoderayuudai/projects/chat-space/app/assets/stylesheets/group.scss	/^    .chat-group-form__field--right {$/;"	function	line:81
+.chat-group-form__label	/Users/onoderayuudai/projects/chat-space/app/assets/stylesheets/group.scss	/^    .chat-group-form__label {$/;"	function	line:86
+.chat-group-form__search.clearfix	/Users/onoderayuudai/projects/chat-space/app/assets/stylesheets/group.scss	/^    .chat-group-form__search.clearfix{$/;"	function	line:92
+.chat-group-form__input	/Users/onoderayuudai/projects/chat-space/app/assets/stylesheets/group.scss	/^      .chat-group-form__input{$/;"	function	line:93
+.js-user-seaerch-result	/Users/onoderayuudai/projects/chat-space/app/assets/stylesheets/group.scss	/^    .js-user-seaerch-result{$/;"	function	line:97
+.chat-group-user.clearfix	/Users/onoderayuudai/projects/chat-space/app/assets/stylesheets/group.scss	/^      .chat-group-user.clearfix{ \/\/javascrptで追加されるやつに当たってない可能性$/;"	function	line:102
+&:after	/Users/onoderayuudai/projects/chat-space/app/assets/stylesheets/group.scss	/^        &:after {$/;"	function	line:107
+p.chat-group-user__name	/Users/onoderayuudai/projects/chat-space/app/assets/stylesheets/group.scss	/^        p.chat-group-user__name{$/;"	function	line:112
+a.user-search-add.chat-group-user__btn.chat-group-user__btn--add.js-add-btn	/Users/onoderayuudai/projects/chat-space/app/assets/stylesheets/group.scss	/^        a.user-search-add.chat-group-user__btn.chat-group-user__btn--add.js-add-btn{$/;"	function	line:116
+.chat-group-form__input	/Users/onoderayuudai/projects/chat-space/app/assets/stylesheets/group.scss	/^    .chat-group-form__input {$/;"	function	line:123
+.chat-group-user.clearfix	/Users/onoderayuudai/projects/chat-space/app/assets/stylesheets/group.scss	/^  .chat-group-user.clearfix{$/;"	function	line:132
+&:after	/Users/onoderayuudai/projects/chat-space/app/assets/stylesheets/group.scss	/^    &:after {$/;"	function	line:137
+.chat-group-user__name	/Users/onoderayuudai/projects/chat-space/app/assets/stylesheets/group.scss	/^    .chat-group-user__name {$/;"	function	line:143
+.chat-group-user__btn	/Users/onoderayuudai/projects/chat-space/app/assets/stylesheets/group.scss	/^    .chat-group-user__btn {$/;"	function	line:148
+&.chat-group-user__btn--add	/Users/onoderayuudai/projects/chat-space/app/assets/stylesheets/group.scss	/^      &.chat-group-user__btn--add {$/;"	function	line:153
+&.chat-group-user__btn--remove	/Users/onoderayuudai/projects/chat-space/app/assets/stylesheets/group.scss	/^      &.chat-group-user__btn--remove {$/;"	function	line:158
+.chat-group-users.js-add-user	/Users/onoderayuudai/projects/chat-space/app/assets/stylesheets/group.scss	/^  .chat-group-users.js-add-user{$/;"	function	line:163
+.chat-group-user.clearfix.js-chat-member	/Users/onoderayuudai/projects/chat-space/app/assets/stylesheets/group.scss	/^    .chat-group-user.clearfix.js-chat-member{$/;"	function	line:165
+&:after	/Users/onoderayuudai/projects/chat-space/app/assets/stylesheets/group.scss	/^      &:after {$/;"	function	line:170
+.chat-group-form__action-btn	/Users/onoderayuudai/projects/chat-space/app/assets/stylesheets/group.scss	/^  .chat-group-form__action-btn {$/;"	function	line:178
+.main__contents	/Users/onoderayuudai/projects/chat-space/app/assets/stylesheets/messages.scss	/^.main__contents{$/;"	function	line:1
+.main__contents__header	/Users/onoderayuudai/projects/chat-space/app/assets/stylesheets/messages.scss	/^  .main__contents__header{$/;"	function	line:3
+.main__contents__header__edit	/Users/onoderayuudai/projects/chat-space/app/assets/stylesheets/messages.scss	/^    .main__contents__header__edit{$/;"	function	line:5
+a.right-header__button	/Users/onoderayuudai/projects/chat-space/app/assets/stylesheets/messages.scss	/^      a.right-header__button{$/;"	function	line:7
+ul.left-header__members	/Users/onoderayuudai/projects/chat-space/app/assets/stylesheets/messages.scss	/^  ul.left-header__members{$/;"	function	line:13
+li.member	/Users/onoderayuudai/projects/chat-space/app/assets/stylesheets/messages.scss	/^      li.member{$/;"	function	line:18
+GroupsController	/Users/onoderayuudai/projects/chat-space/app/controllers/groups_controller.rb	/^class GroupsController < ApplicationController$/;"	class	line:1
+index	/Users/onoderayuudai/projects/chat-space/app/controllers/groups_controller.rb	/^  def index$/;"	method	line:2	class:GroupsController
+show	/Users/onoderayuudai/projects/chat-space/app/controllers/groups_controller.rb	/^  def show$/;"	method	line:7	class:GroupsController
+new	/Users/onoderayuudai/projects/chat-space/app/controllers/groups_controller.rb	/^  def new$/;"	method	line:11	class:GroupsController
+create	/Users/onoderayuudai/projects/chat-space/app/controllers/groups_controller.rb	/^  def create$/;"	method	line:15	class:GroupsController
+edit	/Users/onoderayuudai/projects/chat-space/app/controllers/groups_controller.rb	/^  def edit$/;"	method	line:25	class:GroupsController
+update	/Users/onoderayuudai/projects/chat-space/app/controllers/groups_controller.rb	/^  def update$/;"	method	line:30	class:GroupsController
+search	/Users/onoderayuudai/projects/chat-space/app/controllers/groups_controller.rb	/^  def search$/;"	method	line:37	class:GroupsController
+group_params	/Users/onoderayuudai/projects/chat-space/app/controllers/groups_controller.rb	/^  def group_params$/;"	method	line:48	class:GroupsController
+update_params	/Users/onoderayuudai/projects/chat-space/app/controllers/groups_controller.rb	/^  def update_params$/;"	method	line:52	class:GroupsController
+appendUser	/Users/onoderayuudai/projects/chat-space/app/assets/javascripts/search.js	/^  function appendUser(user){$/;"	function	line:9
+appendUserToMember	/Users/onoderayuudai/projects/chat-space/app/assets/javascripts/search.js	/^  function appendUserToMember(userId,userName){$/;"	function	line:16
