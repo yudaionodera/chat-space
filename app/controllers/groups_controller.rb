@@ -1,7 +1,7 @@
 class GroupsController < ApplicationController
   def index
-    @groups = current_user.groups
-    @messages = Message.all
+    @groups = current_user.groups 
+    @messages = Message.all 
   end
 
   def show

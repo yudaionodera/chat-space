@@ -18,7 +18,7 @@
           - @users.each do |user|
             %li.member
               #{user.name}
-    .main__contents__second
+    .main__contents__second.js-messages
       - if @messages
         = render partial: 'messages/messages', locals: {messege: @messages}
     - if controller.controller_name == "messages"
