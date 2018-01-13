@@ -65,7 +65,7 @@ $(function(){
   function update(){
     var message_id = $('.js-messages:last').data("id");
     $.ajax({
-      url: '/groups/:group_id/messages', //URL
+      url: '/groups/#{:current_user.id}/messages', //URL
       type: 'GET', //getメソッド
       data:{  //railsに送るデータ
         message: {id: message_id }
